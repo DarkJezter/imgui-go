@@ -638,3 +638,13 @@ func IsItemHoveredV(flags int) bool {
 func IsItemHovered() bool {
 	return IsItemHoveredV(HoveredFlagsDefault)
 }
+
+// SetNextWindowSizeV sets next window size.
+// Set axis to 0.0 to force an auto-fit on this axis. Call before Begin().
+func GetItemRectSize() Vec2 {
+	var res Vec2
+	sizeArg, done := res.wrapped()
+	*sizeArg = C.iggGetItemRectSize()
+	done()
+	return res
+}

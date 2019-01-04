@@ -83,3 +83,15 @@ func (list DrawList) IndexBuffer() (unsafe.Pointer, int) {
 
 	return data, int(size)
 }
+
+
+func (list DrawList) ChannelsSplit(count int) {
+	C.iggChannelsSplit(list.handle(), C.int(count))
+}
+func (list DrawList) ChannelsMerge() {
+	C.iggChannelsMerge(list.handle())
+}
+
+func (list DrawList) ChannelsSetCurrent(channel int) {
+	C.iggChannelsSetCurrent(list.handle(), C.int(channel))
+}

@@ -107,6 +107,7 @@ extern void iggCloseCurrentPopup(void);
 
 extern IggBool  iggIsItemHovered(int flags);
 
+extern IggVec2 iggGetItemRectSize();
 #ifdef __cplusplus
 }
 #endif

@@ -15,6 +15,9 @@ extern void iggDrawListGetRawVertexBuffer(IggDrawList handle, void **data, int *
 extern void iggGetIndexBufferLayout(size_t *entrySize);
 extern void iggGetVertexBufferLayout(size_t *entrySize, size_t *posOffset, size_t *uvOffset, size_t *colOffset);
 
+extern void iggChannelsSplit(IggDrawList handle, int count);
+extern void iggChannelsMerge(IggDrawList handle);
+extern void iggChannelsSetCurrent(IggDrawList handle, int chan);
 #ifdef __cplusplus
 }
 #endif

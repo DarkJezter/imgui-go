@@ -407,3 +407,12 @@ IggBool iggIsItemHovered(int flags)
 {
    return ImGui::IsItemHovered(flags) ? 1 : 0;
 }
+
+IggVec2 iggGetItemRectSize()
+{
+   IggVec2 outSize;
+   ImVec2 size = ImGui::GetItemRectSize();
+   exportValue(outSize,size);
+   return outSize;
+}
+

@@ -40,3 +40,19 @@ void iggGetVertexBufferLayout(size_t *entrySize, size_t *posOffset, size_t *uvOf
    *uvOffset = IM_OFFSETOF(ImDrawVert, uv);
    *colOffset = IM_OFFSETOF(ImDrawVert, col);
 }
+
+void iggChannelsSplit(IggDrawList handle, int count)
+{
+   ImDrawList *drawList = reinterpret_cast<ImDrawList *>(handle);
+   drawList->ChannelsSplit(count);
+}
+void iggChannelsMerge(IggDrawList handle)
+{
+   ImDrawList *drawList = reinterpret_cast<ImDrawList *>(handle);
+   drawList->ChannelsMerge();
+}
+void iggChannelsSetCurrent(IggDrawList handle, int chan)
+{
+   ImDrawList *drawList = reinterpret_cast<ImDrawList *>(handle);
+   drawList->ChannelsSetCurrent(chan);
+}
